@@ -14,11 +14,8 @@ pipeline {
                     ls -la
                     node --version
                     npm --version
-                    npm cache clean --force
-                    npm config delete proxy
-                    npm config delete https-proxy
-                    #npm ci
-                    #npm run build
+                    npm ci
+                    npm run build
                     ls -la
                 '''
             }
@@ -33,8 +30,8 @@ pipeline {
             }
             steps {
                 sh '''
-                    #test -f build/index.html
-                    #npm test
+                    test -f build/index.html
+                    npm test
                 '''
             }
         }
